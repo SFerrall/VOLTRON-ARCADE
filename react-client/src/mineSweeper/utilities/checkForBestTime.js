@@ -9,6 +9,7 @@ export const checkForBestTime = (rows , seconds, minesweeper) =>{
                 return 0;
                 break;
             }
+            break;
         case 16:
             if(seconds < minesweeper.intermediateBestTime){
                 return 2
@@ -23,7 +24,9 @@ export const checkForBestTime = (rows , seconds, minesweeper) =>{
                 break;
             }else{
                 return 0;
-                break
+                break;
             }
+        default:
+            return 0;
     }
 }

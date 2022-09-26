@@ -1,14 +1,14 @@
 import React , {useEffect, useState} from "react";
-import FillBoard from './Utilities/fillBoard';
-import revealCell from './Utilities/revealCell';
+import FillBoard from './utilities/fillBoard';
+import revealCell from './utilities/revealCell';
 import { FaFlag } from "react-icons/fa";
 import GridCell from './gridCell';
-import RevealCell from "./Utilities/revealCell";
-import Timer  from "./Utilities/timer";
-import Modal from "./Utilities/modal";
-import { trusted } from "mongoose";
-import WinModal from "./Utilities/winModal";
-import { checkForBestTime } from "./Utilities/checkForBestTime";
+import RevealCell from "./utilities/revealCell";
+import Timer  from "./utilities/timer";
+import Modal from "./utilities/loseModal";
+//import { trusted } from "mongoose";
+import WinModal from "./utilities/winModal";
+import { checkForBestTime } from "./utilities/checkForBestTime";
 import axios from "axios";
 //import Wallet from "../../../Server/mongoModels/wallet";
 
@@ -208,6 +208,8 @@ function MineSweeperGameBoard({minesweeper , player}) {
                         break;
                     case 3:
                         minesweeper.expertBestTime = seconds;
+                        break;
+                    default:
                         break;
                 }
             }

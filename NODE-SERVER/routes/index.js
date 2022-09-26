@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-const signUp = require('./Authentication/signUp');
-const login = require('./Authentication/login');
-const postBestTime = require('./gameEngine/minesweeper/postBestTime')
+const signUp = require('../Authentication/signUp');
+const login = require('../Authentication/login');
+const postBestTime = require('../gameEngine/mineSweeper/postBestTime')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

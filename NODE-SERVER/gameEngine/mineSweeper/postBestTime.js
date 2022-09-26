@@ -1,4 +1,4 @@
-const Wallet = require('./mongoModels/wallet');
+const Wallet = require('.../mongoModels/wallet');
 
 const postBestTime = async (player , record , seconds) => {
     const user = await Wallet.findOne({username: player});

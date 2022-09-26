@@ -2,11 +2,11 @@ import React , {useState} from "react";
 import '../App.css';
 import {useLocation} from 'react-router-dom';
 import axios from "axios";
-import GameBoard from './gameComponenets/gameBoard';
-import GameCell from './gameComponenets/gameCell';
-import Board from "../tuts/tutComponents/board";
+//import GameBoard from './gameComponenets/gameBoard';
+//import GameCell from './gameComponenets/gameCell';
+//import Board from "../tuts/tutComponents/board";
 import {FaFlag , FaBomb} from 'react-icons/fa';
-import MineSweeperGameBoard from '../minesweeper/gameBoard';
+import MineSweeperGameBoard from '../mineSweeper/gameBoard';
 
 function Profile(props) {
 

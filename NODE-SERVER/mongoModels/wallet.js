@@ -1,6 +1,6 @@
 const Mongoose = require('mongoose');
 
-const walletSchema = mongoose.Schema({
+const walletSchema = Mongoose.Schema({
     username: {
         type: String,
         required: true,
@@ -30,6 +30,6 @@ const walletSchema = mongoose.Schema({
 {timestamps: true}
 );
 
-const Wallet = mongoose.model('wallet', walletSchema);
+const Wallet = Mongoose.model('wallet', walletSchema);
 
 module.exports = Wallet;
