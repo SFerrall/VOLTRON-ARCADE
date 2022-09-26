@@ -1,0 +1,7 @@
+/react-client/node_modules
+/NODE-SERVER/node_modules
+
+build
+npm-debug.log
+.nyc
+.env.DS_Store
