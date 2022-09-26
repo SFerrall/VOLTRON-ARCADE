@@ -1,6 +1,7 @@
 /react-client/node_modules
 /NODE-SERVER/node_modules
 
+node_modules
 build
 npm-debug.log
 .nyc
