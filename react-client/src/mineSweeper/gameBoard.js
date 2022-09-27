@@ -30,7 +30,6 @@ function MineSweeperGameBoard({minesweeper , player}) {
     useEffect(() => {
         function freshBoard(){
             const newBoard = FillBoard(rows, cols, mines);
-            console.log('yo' , newBoard)
             setGrid(newBoard);
         };
         freshBoard();
@@ -42,7 +41,6 @@ function MineSweeperGameBoard({minesweeper , player}) {
     
     const clearTimer = () => {
         setSeconds(0);
-        //toggle();
     };
 
     useEffect(() => {
@@ -52,7 +50,6 @@ function MineSweeperGameBoard({minesweeper , player}) {
                 setSeconds(seconds + 1)
             }, 1000);
         }else if(!isActive && seconds !== 0) {
-            //clearTimer();
             clearInterval(interval);
             interval = null;
         }
@@ -94,14 +91,13 @@ function MineSweeperGameBoard({minesweeper , player}) {
                 toggle();
                 
                 setIsShowing(true)
-                //alert("Boom!")
+                
             }
             else{
                 let revealed = RevealCell(newGrid, x, y);
                 setGrid(revealed);
             }
         }
-        ///checkWin();
                          
     };
 
@@ -123,7 +119,6 @@ function MineSweeperGameBoard({minesweeper , player}) {
         setFlags(0);
         const beg = FillBoard(rows, cols, mines);
         setGrid(beg);
-        //toggle();
         clearTimer();
         
     }
@@ -149,24 +144,9 @@ function MineSweeperGameBoard({minesweeper , player}) {
     }
 
     const expertLevel = () => {
-                //setRows(20);
-                //setCols(10);
-                //setMines(40);
-        
-            //function setExpertBoard(){
-                
-                //const expertBoard = FillBoard(rows, cols, mines);
-                //setGrid(expertBoard);
-            //}
             expertBoard();
-            
-        
-        //console.log('expert', expertBoard, rows);
     }
 
-    
-
-    //console.log(grid);
 
     function checkWin(){
         let Iwin = 0;
@@ -179,22 +159,17 @@ function MineSweeperGameBoard({minesweeper , player}) {
             }
             
         })})
-        
-        console.log(Iwin)
+
        return Iwin
     };
 
     useEffect(()=> {
         let Iwin = checkWin();
-        console.log(Iwin+10);
-        console.log(minesweeper.beginnerBestTime);
-        console.log('yoyo')
         if(Iwin === 0 && grid.length && !losing && flags === mines){
             toggle();
             setShowWin(true)
-            console.log(Iwin +100);
             let record = checkForBestTime(rows, seconds , minesweeper);
-            console.log(record)
+
             if(record > 0){
                let response =  axios.post('/bestTime' , {record: record, player: player ,seconds: seconds});
                
@@ -214,10 +189,7 @@ function MineSweeperGameBoard({minesweeper , player}) {
                 }
             }
             
-            }
-            
-            
-            
+            }       
             
         }
     }, [grid])
@@ -276,25 +248,3 @@ function MineSweeperGameBoard({minesweeper , player}) {
 }
 
 export default MineSweeperGameBoard;
-/*
-{grid.map((row) => {
-                return(
-                    <div>
-                        <h1>hello</h1>
-                    </div>
-                )
-            })}
-
-
-
-{row.map((item)=>{
-                            return(
-                                <div>
-                                    {JSON.stringify(item.value)}
-                                </div>
-                            )
-                        })}
-
-
-
-*/

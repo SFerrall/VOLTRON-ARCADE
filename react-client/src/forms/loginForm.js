@@ -20,19 +20,8 @@ export function Login(props) {
         const formdata = new FormData(e.target);
         formdata.append("username", formValue.username);
         formdata.append("password" , formValue.password);
-        console.log('yo');
-        //const  {username, password} = request.body;
         const response = await axios.post('/login' , formValue)
-        //.then(response => {response.json()})
-        //.then((data) => {console.log(data.username)})
-        //.then(console.log('ok'));
         const wallet = response.data;
-        console.log(response.data.username);
-        console.log('hello');
-        console.log(wallet.inventory)
-        //setUser(wallet.username);
-        //setUsername(wallet.username);
-        //setPassword(wallet.password);
         navigate('/profile', {state: {wallet}});
     };
 

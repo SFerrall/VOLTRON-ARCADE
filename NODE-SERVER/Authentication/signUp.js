@@ -11,8 +11,7 @@ const signUp = async (req, res, next) => {
             username,
             password
         }).then(wallet => {
-            console.log('Wallet created!');
-            console.log(wallet);
+            console.log('Wallet created for {username}!');
             res.status(201).json({
                 message: 'Wallet created!',
                 wallet: wallet._id,

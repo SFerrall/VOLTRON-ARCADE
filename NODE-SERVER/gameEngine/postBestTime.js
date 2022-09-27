@@ -1,9 +1,9 @@
-const Wallet = require('.../mongoModels/wallet');
+const Wallet = require('../mongoModels/wallet');
 
 const postBestTime = async (player , record , seconds) => {
     const user = await Wallet.findOne({username: player});
-    console.log(user)
-    console.log('git')
+    
+    
     switch(record){
         case 1:
             if(seconds < user.games.minesweeper.beginnerBestTime){

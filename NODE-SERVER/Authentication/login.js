@@ -12,9 +12,7 @@ const login = async (req, res, next) => {
         if(password !== wallet.password){
             res.status(400).json({message: 'Incorrect password'})
         } else {
-            //res.redirect( './profile');
             console.log(wallet.username +' Logged in!');
-            //res.send(wallet)
             res.status(200).json(wallet)
         }
     } catch (error) {

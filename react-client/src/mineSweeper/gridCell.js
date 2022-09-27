@@ -53,6 +53,3 @@ export default function GridCell({data, setFlag, reveal }) {
         </div>
     )
 }
-
-// data.isRevealed ? revealedStyle : style
-//

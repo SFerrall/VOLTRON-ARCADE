@@ -26,21 +26,19 @@ export default function FillBoard (rows, cols, mines){
 
     for(let y = 0; y < cols; y++){
         for(let x = 0; x < rows; x++){
-            //console.log('yo');
             if(grid[y][x].value === -1){
-                console.log('bomb');
                 continue;
             }
-            console.log('rally');
+            
             //top
             if(y > 0 && grid[y-1][x].value === -1){
                 grid[y][x].value++;
-                console.log('yoyo');
+                
             }
             //bottom
             if(y < cols - 1 && grid[y+1][x].value === -1){
                 grid[y][x].value++;
-                console.log('bump')
+                
             }
             //left
             if(x > 0 && grid[y][x-1].value === -1){
@@ -69,18 +67,6 @@ export default function FillBoard (rows, cols, mines){
         }
     }
 
-    
-
-    console.log('hello' , grid);
     return grid;
 }
 
-/*
-{
-                x: x,
-                y: y,
-                value: 0,
-                isFlagged: false,
-                isRevealed: false,
-            }
-*/

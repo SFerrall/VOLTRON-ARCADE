@@ -15,9 +15,8 @@ function Profile(props) {
     const [wallet , setWallet] = useState(location.state.wallet);
     const [joules, setJoules] = useState(wallet.inventory.Joules);
     //setWallet(location.state.wallet);
-    console.log(wallet);
+    //console.log(wallet);
     //const {joules, setJoules} = useState(wallet.inventory.Joules)
-    console.log(props);
 
     const minesweeper = wallet.games.minesweeper
     const player = wallet.username

@@ -79,12 +79,6 @@ export default function RevealCell(grid,x,y) {
             grid[y+1][x+1].isRevealed = true;
         }
     }
-        
-        //console.log('hello');
-
-        
-
-
     
     return grid
 }
